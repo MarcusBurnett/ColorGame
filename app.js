@@ -1,6 +1,6 @@
 var header = document.getElementById('header');
 var square = document.getElementsByClassName('square');
-var newColors = document.getElementById('newColors');
+var newColors = document.getElementById('newColours');
 var easy = document.getElementById('easy');
 var hard = document.getElementById('hard');
 var active = document.querySelector('.active');
@@ -82,5 +82,5 @@ function reset(){
     header.style.backgroundColor = 'rgb(71, 123, 165)';
     squareColors();
     result.textContent = "";
-    newColors.textContent = "NEW COLORS";
+    newColors.textContent = "NEW COLOURS";
 }
