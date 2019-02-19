@@ -32,7 +32,7 @@ function squareColors(){
                 for( var i = 0; i < numSquares; i++){
                 square[i].style.backgroundColor = pickedColor;
                 result.textContent = "Correct!";
-                newColors.textContent = "Play Again";
+                newColors.textContent = "PLAY AGAIN";
                 }
             } else {
                 this.style.backgroundColor = 'rgb(41, 41, 41)';
