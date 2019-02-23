@@ -87,7 +87,7 @@ button:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 38vh;
+    padding-top: 230px;
     padding-bottom: 1vh;
 }
 
@@ -150,6 +150,7 @@ button:hover {
 @media screen and (max-width: 800px){
     #mainSection {
         width: 80vw;
+        padding-top: 210px;
     }
 
     #options {
@@ -168,7 +169,7 @@ button:hover {
 @media screen and (max-width: 600px){
     #mainSection {
         width: 90vw;
-        padding-top: 35vh;
+        padding-top: 37vh;
     }
 
     #header h1 {
@@ -178,7 +179,7 @@ button:hover {
     
     #rgb {
         font-weight: 200;
-        font-size: 2.7rem;
+        font-size: 2.5rem;
     }
 
     #header {
@@ -210,12 +211,22 @@ button:hover {
         padding-right: 0vw;
     }
 
+    #newColours:hover {
+        background: white;
+        color: rgb(71, 123, 165);
+    }
+
+    #newColours:active {
+        background: rgb(71, 123, 165);
+        color: white;
+    }
+
 }
 
 @media screen and (max-width: 500px){
     #mainSection {
         width: 95vw;
-        padding-top: 34vh;
+        padding-top: 190px;
     }
 
 
