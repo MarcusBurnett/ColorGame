@@ -1,23 +1,23 @@
 var header = document.getElementById('header');
 var square = document.getElementsByClassName('square');
-var newColors = document.getElementById('newColours');
+var newColours = document.getElementById('newColours');
 var easy = document.getElementById('easy');
 var hard = document.getElementById('hard');
 var active = document.querySelector('.active');
 var numSquares = 6;
-var colors = generateColors(numSquares);
-var colorDisplay = document.getElementById('rgb');
-var pickedColor = colors[Math.floor(Math.random() * numSquares)];
+var colours = generateColours(numSquares);
+var colourDisplay = document.getElementById('rgb');
+var pickedColour = colours[Math.floor(Math.random() * numSquares)];
 var result = document.getElementById('result');
 
-colorDisplay.textContent = pickedColor;
+colourDisplay.textContent = pickedColour;
 
-squareColors();
+squareColours();
 
-function squareColors(){
+function squareColours(){
     for (var i = 0; i < square.length; i++){
-        if(colors[i]){
-            square[i].style.backgroundColor = colors[i];
+        if(colours[i]){
+            square[i].style.backgroundColor = colours[i];
             square[i].style.display = 'block';
 
         } else {
@@ -25,14 +25,14 @@ function squareColors(){
         }
         square[i].addEventListener('click', function(){
 
-        var clickedColor = this.style.backgroundColor;
+        var clickedColour = this.style.backgroundColor;
 
-            if(clickedColor === pickedColor){
-                header.style.backgroundColor = pickedColor;
+            if(clickedColour === pickedColour){
+                header.style.backgroundColor = pickedColour;
                 for( var i = 0; i < numSquares; i++){
-                square[i].style.backgroundColor = pickedColor;
+                square[i].style.backgroundColor = pickedColour;
                 result.textContent = "Correct!";
-                newColors.textContent = "PLAY AGAIN";
+                newColours.textContent = "PLAY AGAIN";
                 }
             } else {
                 this.style.backgroundColor = 'rgb(41, 41, 41)';
@@ -43,7 +43,7 @@ function squareColors(){
     };
 }
 
-newColors.addEventListener('click', reset);
+newColours.addEventListener('click', reset);
 
 easy.addEventListener('click', function(){
     numSquares = 3;
@@ -60,15 +60,15 @@ hard.addEventListener('click', function(){
     reset();
 })
 
-function generateColors(numSquares) {
+function generateColours(numSquares) {
     var arr = [];
 
     for ( var i = 0; i < numSquares; i++){
-            arr.push(randomColor());
+            arr.push(randomColour());
     } return arr;
 }
 
-function randomColor() {
+function randomColour() {
     var red = Math.floor(Math.random() * 256);
     var green = Math.floor(Math.random() * 256);
     var blue = Math.floor(Math.random() * 256);
@@ -76,11 +76,11 @@ function randomColor() {
 }
 
 function reset(){
-    colors = generateColors(numSquares);
-    pickedColor = colors[Math.floor(Math.random() * numSquares)];
-    colorDisplay.textContent = pickedColor;
+    colours = generateColours(numSquares);
+    pickedColour = colours[Math.floor(Math.random() * numSquares)];
+    colourDisplay.textContent = pickedColour;
     header.style.backgroundColor = 'rgb(71, 123, 165)';
-    squareColors();
+    squareColours();
     result.textContent = "";
-    newColors.textContent = "NEW COLOURS";
+    newColours.textContent = "NEW COLOURS";
 }
